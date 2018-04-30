@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -10,51 +11,97 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/font.css">
-        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/app.css">
-        <title>Taxi48</title>
-    </head>
-    <body class="with-subnav grey lighten-3">
-        <header>
-            <div class="navbar-fixed">
-                <nav>
-                    <div class="nav-wrapper green darken-1 z-depth-1">
-                        <a href="#" class="brand-logo center yellow-text">Taxi48</a>
-                        <ul id="nav-mobile" class="left">
-                            <li><a href="sass.html"><i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i></a></li>
-                        </ul>
-                    </div>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <title>Taxi48</title>
+</head>
+
+<body class="with-subnav grey lighten-3">
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper green darken-1 z-depth-1">
+                    <a href="#" class="brand-logo center yellow-text">Taxi48</a>
                     
-                    <div class="grey lighten-5 z-depth-1">
-                        <div class="row">
-                            <div class="col s12">
-                                <ul class="tabs transparent">
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="map.html">แผนที่</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="search.html">ค้นหา</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="report.html">รายงาน</a></li>
-                                    <li class="tab col s3"><a class="green-text" href="history.html">ประวัติ</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="profile.html">โปรไฟล์</a></li>
-                                </ul>
+                </div>
+
+                <div class="grey lighten-5 z-depth-1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs transparent">
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="map.html">แผนที่</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="search.html">ค้นหา</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="report.html">รายงาน</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="green-text" href="history.html">ประวัติ</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="profile.html">โปรไฟล์</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <class class="row">
+                <div class="col s12">
+                    <h5 class="center-align">ประวัติ</h5>
+
+                    <div class="card">
+                        <div class="card-content black-text">
+                            <div class="row">
+                                <div class="col s9">
+                                    <span class="card-title center-align">กข-1234</span>
+                                    <p>เลขคนขับ - 1234567</p>
+                                    <p>วันเวลาเกิดเหตุ - วันที่ 11 เดือน 12 เวลา 20:34 น.</p>
+                                    <p>สถานที่เกิดเหตุ</p>
+                                    <p>เรียกจาก หน้ามอ ไป หลังมอ</p>
+                                    <p>หัวข้อร้องเรียน : ตดในรถ</p>
+
+                                </div>
+                                <div class="col s3">
+                                    <span class="card-title">วันที่รายงาน</span>
+                                    <p>12 เดือน 12</p>
+                                    <p>11 : 42 น.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div class="center-align">
+                                <a href="history-detail.html">ดูรายละเอียด</a>
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
-        </header>
 
-        <main>
-            <div class="container">
-                
-            </div>
-        </main>
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-    </body>
+
+
+
+
+                </div>
+            </class>
+
+        </div>
+    </main>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
 </html>
