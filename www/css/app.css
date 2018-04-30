@@ -1,3 +1,17 @@
 html * {
-    font-family: 'Noto Sans', sans-serif !important;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.with-subnav .navbar-fixed {
+    height: 104px;
+}
+
+.with-subnav .container {
+    margin-top: 0.5em;
+    width: 95%;
+}
+
+.card-panel {
+    margin-left: -1rem;
+    margin-right: -1rem;
 }

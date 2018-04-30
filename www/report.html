@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <title>Taxi48</title>
+    </head>
+    <body class="with-subnav grey lighten-3">
+        <header>
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper green darken-1 z-depth-1">
+                        <a href="#" class="brand-logo center yellow-text">Taxi48</a>
+                        <ul id="nav-mobile" class="left">
+                            <li><a href="sass.html"><i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grey lighten-5 z-depth-1">
+                        <div class="row">
+                            <div class="col s12">
+                                <ul class="tabs transparent">
+                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="map.html">แผนที่</a></li>
+                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="search.html">ค้นหา</a></li>
+                                    <li class="tab col s3"><a class="green-text" href="report.html">รายงาน</a></li>
+                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="history.html">ประวัติ</a></li>
+                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="profile.html">โปรไฟล์</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                
+            </div>
+        </main>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>
