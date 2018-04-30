@@ -25,11 +25,9 @@
                 <nav>
                     <div class="nav-wrapper green darken-1 z-depth-1">
                         <a href="#" class="brand-logo center yellow-text">Taxi48</a>
-                        <ul id="nav-mobile" class="left">
-                            <li><a href="sass.html"><i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i></a></li>
-                        </ul>
+
                     </div>
-                    
+
                     <div class="grey lighten-5 z-depth-1">
                         <div class="row">
                             <div class="col s12">
@@ -49,12 +47,107 @@
 
         <main>
             <div class="container">
-                
+              <div class="row">
+                  <form class="col s12 card-panel">
+                      <div class="row">
+                        <br>
+                        <div class="input-field col s4">
+                          <select>
+                              <option value="" disabled selected></option>
+                              <option value="1">ชื่อคนขับ</option>
+                              <option value="2">เลขที่คนขับ</option>
+                              <option value="3">ทะเบียนรถ</option>
+                          </select>
+                            <label>ประเภทรายงาน</label>
+                        </div>
+
+                        <div class="input-field col s8">
+                              <input placeholder="" id="search1" type="text" class="validate">
+                              <label for="first_name">คำค้นหา</label>
+                        </div>
+
+                          <div class="col s11" style="outline: 1px solid #9a9a9a; margin-left:15px;  display:none;" id="dhong" onclick="popup()">
+                            <div class="col s5">
+                              <img src="image/driver.png" height="100px" width="100px" style="margin-top:10px;">
+                            </div>
+                            <div class="col s7">
+                              <p>นายด๋ง พิทักจักรวาล</p>
+                              <p>เลขคนขับ : 9999</p>
+                              <p>ทะเบียนรถ : กข-1234</p>
+                              <p>ประวัติรายงาน : <span style="color: red;">พบ 5 รายการ</span> </p>
+                            </div>
+
+                          </div>
+
+                      </div>
+                  </form>
+              </div>
             </div>
         </main>
-        
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+          <div class="modal-content">
+            <div class="row">
+
+              <div class="col s12">
+                <div class="col s5">
+                  <img src="image/driver.png" height="100px" width="100px">
+                </div>
+                <div class="col s7">
+                  <p>นายด๋ง พิทักจักรวาล</p>
+                  <p>เลขคนขับ : 9999</p>
+                  <p>ทะเบียนรถ : กข-1234</p>
+                </div>
+              </div>
+
+              <div class="col s12">
+                <div class="center-align">
+                  <a class="waves-effect waves-light btn">รายงานปัญหา</a>
+                </div>
+                <br><hr><br>
+              </div>
+
+              <p class="center-align">ประวัติการรายงาน</p>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ขับรถเร็ว
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ผ่าไฟแดง
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                มารยาทไม่ดี
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ลวนลามผู้โดยสาร
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ตดในรถ
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+          var elem = document.querySelector('select');
+          var instance = M.FormSelect.init(elem);
+          var elem2 = document.querySelector('.modal');
+          var instance2 = M.Modal.init(elem2);
+          $("#search1").keypress(function (e) {
+            if (e.which == 13) {
+              $("#dhong").show();
+            }
+          });
+
+          function popup(){
+            instance2.open();
+          }
+
+        </script>
     </body>
 </html>
