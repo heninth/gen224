@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://* 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' http://* 'unsafe-inline'; media-src *; img-src 'self' http://* data: content:;  script-src 'self' http://* 'unsafe-inline' 'unsafe-eval';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -18,6 +18,12 @@
         <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/app.css">
         <title>Taxi48</title>
+        <style>
+        #map {
+          height: 400px;
+          width: 100%;
+        }
+</style>
     </head>
     <body class="with-subnav grey lighten-3">
         <header>
@@ -29,7 +35,7 @@
                             <li><a href="sass.html"><i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i></a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="grey lighten-5 z-depth-1">
                         <div class="row">
                             <div class="col s12">
@@ -48,13 +54,123 @@
         </header>
 
         <main>
-            <div class="container">
-               
-            </div>
+          <div class="container">
+              <div class="row">
+                  <form class="col s12 card-panel">
+                      <div class="row">
+                        <div id="map"></div>
+                          <script>
+                          function initMap() {
+                            var uluru = {lat: 13.651125, lng: 100.487497};
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                              zoom: 17,
+                              center: uluru
+                            });
+
+                            var imageMe = {
+                              url: 'image/human.png',
+                            };
+                            var me = new google.maps.Marker({
+                              position: uluru,
+                              map: map,
+                              icon: imageMe
+                            });
+                            var imageTaxi = 'image/taxi.png';
+                            var taxi1 = new google.maps.Marker({
+                              position: {lat: 13.651191, lng: 100.486994},
+                              map: map,
+                              icon: imageTaxi
+                            });
+                            var taxi2 = new google.maps.Marker({
+                              position: {lat: 13.652577, lng: 100.487819},
+                              map: map,
+                              icon: imageTaxi
+                            });
+                            var taxi3 = new google.maps.Marker({
+                              position: {lat: 13.650874, lng: 100.488165},
+                              map: map,
+                              icon: imageTaxi
+                            });
+                            var taxi4 = new google.maps.Marker({
+                              position: {lat: 13.650634, lng: 100.486191},
+                              map: map,
+                              icon: imageTaxi
+                            });
+
+                            function onclick(){
+                              instance.open();
+                            }
+
+                            google.maps.event.addListener(taxi1, 'click', onclick);
+                            google.maps.event.addListener(taxi2, 'click', onclick);
+                            google.maps.event.addListener(taxi3, 'click', onclick);
+                            google.maps.event.addListener(taxi4, 'click', onclick);
+
+                          }
+
+                          </script>
+                          <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAz-1wyKnsN7KuXQhnSAKbDiZeDA2N89Yw&callback=initMap">
+                          </script>
+                      </div>
+                  </form>
+              </div>
+          </div>
         </main>
-        
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal bottom-sheet">
+          <div class="modal-content">
+            <div class="row">
+
+              <div class="col s12">
+                <div class="col s4">
+                  <img src="image/driver.png" height="100px" width="100px">
+                </div>
+                <div class="col s8">
+                  <p>นายด๋ง พิทักจักรวาล</p>
+                  <p>เลขคนขับ : 9999</p>
+                  <p>ทะเบียนรถ : กข-1234</p>
+                </div>
+              </div>
+
+              <div class="col s12">
+                <div class="center-align">
+                  <a class="waves-effect waves-light btn">รายงานปัญหา</a>
+                </div>
+                <br><hr><br>
+              </div>
+
+              <p class="center-align">ประวัติการรายงาน</p>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ขับรถเร็ว
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ผ่าไฟแดง
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                มารยาทไม่ดี
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ลวนลามผู้โดยสาร
+              </div>
+              <div class="col s12" style="outline: 1px solid #9a9a9a">
+                ตดในรถ
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+          // initialization modals
+          var elem = document.querySelector('.modal');
+          var instance = M.Modal.init(elem);
+
+        </script>
     </body>
 </html>
