@@ -18,6 +18,12 @@
         <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/app.css">
         <title>Taxi48</title>
+        <style>
+        .driver-picture {
+          width: 110px;
+          height: 110px;
+        }
+        </style>
     </head>
     <body class="with-subnav grey lighten-3">
         <header>
@@ -55,10 +61,10 @@
                           <select>
                               <option value="" disabled selected></option>
                               <option value="1">ชื่อคนขับ</option>
-                              <option value="2">เลขที่คนขับ</option>
-                              <option value="3">ทะเบียนรถ</option>
+                              <option value="2">ทะเบียนรถ</option>
+                              <option value="3">รหัสประจำตัวคนขับ</option>
                           </select>
-                            <label>ประเภทรายงาน</label>
+                            <label>ประเภทคำค้น</label>
                         </div>
 
                         <div class="input-field col s8">
@@ -86,49 +92,46 @@
         </main>
 
         <!-- Modal Structure -->
-        <div id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-            <div class="row">
-
-              <div class="col s12">
-                <div class="col s5">
-                  <img src="image/driver.png" height="100px" width="100px">
+        <div id="modal1" class="modal bottom-sheet" style="max-height: 60%">
+            <div class="modal-content" style="padding: 1rem;">
+              <img src="image/driver.png" class="driver-picture">
+              <div class="row" style="margin-top: -130px;">
+                <div class="col s12">
+                  <div class="col s8 offset-s4">
+                    <h5>นายด๋ง พิทักจักรวาล</h5>
+                    <h6>ทะเบียนรถ : กข-1234</h6>
+                    <p>รหัสประจำตัวคนขับ : 9999</p>
+                  </div>
                 </div>
-                <div class="col s7">
-                  <p>นายด๋ง พิทักจักรวาล</p>
-                  <p>เลขคนขับ : 9999</p>
-                  <p>ทะเบียนรถ : กข-1234</p>
+  
+                <div class="col s12">
+                  <div class="center-align">
+                    <a href="report.html" class="waves-effect waves-light btn red">รายงานปัญหา</a>
+                  </div>
+                  <br><hr>
+                </div>
+                <div class="col s12">
+                  <p class="center-align">ประวัติการรายงาน</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>หมวดหมู่</th>
+                        <th>รายงานในรอบ 30 วัน (ครั้ง)</th>
+                        <th>รายงานในรอบปี (ครั้ง)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>ขับรถหวาดเสียว</td>
+                        <td>10</td>
+                        <td>120</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-
-              <div class="col s12">
-                <div class="center-align">
-                  <a class="waves-effect waves-light btn">รายงานปัญหา</a>
-                </div>
-                <br><hr><br>
-              </div>
-
-              <p class="center-align">ประวัติการรายงาน</p>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ขับรถเร็ว
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ผ่าไฟแดง
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                มารยาทไม่ดี
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ลวนลามผู้โดยสาร
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ตดในรถ
-              </div>
-
             </div>
-
           </div>
-        </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
