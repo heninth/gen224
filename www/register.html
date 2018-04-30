@@ -19,38 +19,28 @@
         <link rel="stylesheet" type="text/css" href="css/app.css">
         <title>Taxi48</title>
     </head>
-    <body class="with-subnav grey lighten-3">
+    <body class="grey lighten-3">
         <header>
             <div class="navbar-fixed">
                 <nav>
                     <div class="nav-wrapper green darken-1 z-depth-1">
                         <a href="#" class="brand-logo center yellow-text">Taxi48</a>
-                    </div>
-                    
-                    <div class="grey lighten-5 z-depth-1">
-                        <div class="row">
-                            <div class="col s12">
-                                <ul class="tabs transparent">
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="map.html">แผนที่</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="search.html">ค้นหา</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="report.html">รายงาน</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="history.html">ประวัติ</a></li>
-                                    <li class="tab col s3"><a class="green-text" href="profile.html">โปรไฟล์</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <ul id="nav-mobile" class="left">
+                            <li><a href="index.html"><i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i></a></li>
+                        </ul>
                     </div>
                 </nav>
             </div>
         </header>
 
         <main>
-            <div class="container">
+            <div class="container" style="margin-top: 0.5em; width: 95%;">
                 <div class="row">
                     <form class="col s12 card-panel">
                         <div class="row">
+                            <h4 class="center-align">ลงทะเบียน</h4>
                             <div class="input-field col s12">
-                                <input type="text">
+                                <input type="text" class="disabled" disabled value="080-000-0000">
                                 <label>เบอร์โทรศัพท์</label>
                             </div>
                             <div class="input-field col s6">
@@ -70,11 +60,7 @@
                                 <label>เลขหลังบัตร</label>
                             </div>
                             <div class="input-field col s12">
-                                <a href="map.html" class="waves-effect waves-light btn green col s12">บันทึก</a>
-                            </div>
-    
-                            <div class="input-field col s12">
-                                <a href="index.html" class="waves-effect waves-light btn red col s12">ออกจากระบบ</a>
+                                <a href="map.html" class="waves-effect waves-light btn green col s12">ลงทะเบียน</a>
                             </div>
                         </div>
                     </form>
