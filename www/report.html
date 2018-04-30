@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -10,51 +11,302 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/font.css">
-        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/app.css">
-        <title>Taxi48</title>
-    </head>
-    <body class="with-subnav grey lighten-3">
-        <header>
-            <div class="navbar-fixed">
-                <nav>
-                    <div class="nav-wrapper green darken-1 z-depth-1">
-                        <a href="#" class="brand-logo center yellow-text">Taxi48</a>
-                        <ul id="nav-mobile" class="left">
-                            <li><a href="sass.html"><i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i></a></li>
-                        </ul>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/report.css">
+    <title>Taxi48</title>
+</head>
+
+<body class="with-subnav grey lighten-3">
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper green darken-1 z-depth-1">
+                    <a href="#" class="brand-logo center yellow-text">Taxi48</a>
+                    <ul id="nav-mobile" class="left">
+                        <li>
+                            <a href="sass.html">
+                                <i class="material-icons yellow-text" style="font-size: 2.4rem;">arrow_back</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="grey lighten-5 z-depth-1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs transparent">
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="map.html">แผนที่</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="search.html">ค้นหา</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="green-text" href="report.html">รายงาน</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="history.html">ประวัติ</a>
+                                </li>
+                                <li class="tab col s3">
+                                    <a class="grey-text text-lighten-1" href="profile.html">โปรไฟล์</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="grey lighten-5 z-depth-1">
-                        <div class="row">
-                            <div class="col s12">
-                                <ul class="tabs transparent">
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="map.html">แผนที่</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="search.html">ค้นหา</a></li>
-                                    <li class="tab col s3"><a class="green-text" href="report.html">รายงาน</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="history.html">ประวัติ</a></li>
-                                    <li class="tab col s3"><a class="grey-text text-lighten-1" href="profile.html">โปรไฟล์</a></li>
-                                </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <h5 class="center-align">Report</h5>
+            </div>
+            <div class="row">
+                <from class="col s12">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">ชื่อ</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">นามสกุล</label>
+                    </div>
+                    <div class="col s12">
+                        เลขคนขับ
+                        <div class="input-field inline">
+                            <input id="driver_id" type="text" class="validate">
+                            <label for="driver_id">เลขคนขับ</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        ทะเบียนรถ
+                        <div class="input-field inline">
+                            <input id="car_id" type="text" class="validate">
+                            <label for="car_id">เลขะเบียนรถ</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        วันที่เกิดเหตุ
+                        <div class="input-field inline">
+                            <input id="date_picker" type="text" class="datepicker">
+                            <label for="date_picker">วันที่เกิดเหตุ</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        เวลาที่เกิดเหตุ
+                        <div class="input-field inline">
+                            <input id="time_picker" type="text" class="timepicker">
+                            <label for="time_picker">เวลาที่เกิดเหตุ</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>เลือกสถานที่</option>
+                            <option value="1">สถานที่ 1</option>
+                            <option value="2">สถานที่ 2</option>
+                            <option value="3">สถานที่ 3</option>
+                        </select>
+                        <label>สถานที่เกิดเหตุ</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>เรียกรถจากที่ใด</option>
+                            <option value="1">สถานที่ 1</option>
+                            <option value="2">สถานที่ 2</option>
+                            <option value="3">สถานที่ 3</option>
+                        </select>
+                        <label>เรียกรถจากที่ใด</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>สถานที่ปลายทาง</option>
+                            <option value="1">สถานที่ 1</option>
+                            <option value="2">สถานที่ 2</option>
+                            <option value="3">สถานที่ 3</option>
+                        </select>
+                        <label>สถานที่ปลายทาง</label>
+                    </div>
+
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">รายงานความผิด</span>
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>reason1</span>
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="col s6">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>reason1</span>
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="col s6">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>reason1</span>
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="col s6">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>reason1</span>
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="col s6">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>reason1</span>
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="col s6">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>reason1</span>
+                                                </label>
+                                            </p>
+                                        </div>
+                                        <div class="col s12">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>อื่น ๆ </span>
+                                                </label>
+                                            </p>
+                                            <div class="input">
+                                                <input id="other_reason" placeholder="กรอก'อื่น ๆ'ที่นี่" type="text" class="validate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
-        </header>
 
-        <main>
-            <div class="container">
-                
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">การแจ้งความ</span>
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" class="filled-in" />
+                                            <span>แจ้งความแล้ว</span>
+                                        </label>
+                                    </p>
+                                </form>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="report" class="materialize-textarea"></textarea>
+                                        <label for="report">รายละเอียดการแจ้งความ</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">วัตถุประสงค์</span>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <select>
+                                            <option value="" disabled selected>เลือกเหตุผลหนึ่งอย่าง</option>
+                                            <option value="1">ตักเตือน</option>
+                                            <option value="2">ดำเนินตามกฏหมาย</option>
+                                            <option value="3">อื่น ๆ</option>
+                                        </select>
+                                        <label>วัตถุประสงค์ของการแจ้ง</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <textarea id="purpose" class="materialize-textarea"></textarea>
+                                        <label for="purpose">วัตถุประสงค์อื่น ๆ</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">ต้องการการติดต่อกลับหรือไม่</span>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <p>
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio" />
+                                                <span>ต้องการ</span>
+                                            </label>
+                                        </p>
+                                    </div>
+                                    <div class="col s6">
+                                        <p>
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio" />
+                                                <span>ไม่ต้องการ</span>
+                                            </label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6 center-align">
+                            <button class="btn-small waves-effect waves-light red" name="cancel">ยกเลิก
+                            </button>
+                        </div>
+                        <div class="col s6 center-align">
+                            <button class="btn-large waves-effect waves-light" type="submit" name="submit_report">รายงาน
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+
+                        
+
+                    </div>
+
+
+
+
+
+
+                </from>
             </div>
-        </main>
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-    </body>
+
+        </div>
+    </main>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/report.js"></script>
+</body>
+
 </html>
