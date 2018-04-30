@@ -20,8 +20,12 @@
         <title>Taxi48</title>
         <style>
         #map {
-          height: 400px;
           width: 100%;
+          height: calc(100vh - 104px);
+        }
+        .driver-picture {
+          width: 110px;
+          height: 110px;
         }
 </style>
     </head>
@@ -31,7 +35,6 @@
                 <nav>
                     <div class="nav-wrapper green darken-1 z-depth-1">
                         <a href="#" class="brand-logo center yellow-text">Taxi48</a>
-
                     </div>
 
                     <div class="grey lighten-5 z-depth-1">
@@ -52,17 +55,20 @@
         </header>
 
         <main>
-          <div class="container">
-              <div class="row">
-                  <form class="col s12 card-panel">
-                      <div class="row">
+          <div class="container" style="margin: 0; width: 100%;">
+              <div class="row" style="margin-bottom: 0;">
+                  <form class="col s12">
+                      <div class="row" style="margin-bottom: 0;">
                         <div id="map"></div>
                           <script>
                           function initMap() {
                             var uluru = {lat: 13.651125, lng: 100.487497};
                             var map = new google.maps.Map(document.getElementById('map'), {
                               zoom: 17,
-                              center: uluru
+                              center: uluru,
+                              fullscreenControl: false,
+                              streetViewControl: false,
+                              clickableIcons: false
                             });
 
                             var imageMe = {
@@ -117,47 +123,44 @@
         </main>
 
         <!-- Modal Structure -->
-        <div id="modal1" class="modal bottom-sheet">
-          <div class="modal-content">
-            <div class="row">
-
+        <div id="modal1" class="modal bottom-sheet" style="max-height: 60%">
+          <div class="modal-content" style="padding: 1rem;">
+            <img src="image/driver.png" class="driver-picture">
+            <div class="row" style="margin-top: -130px;">
               <div class="col s12">
-                <div class="col s5">
-                  <img src="image/driver.png" height="100px" width="100px">
-                </div>
-                <div class="col s7">
-                  <p>นายด๋ง พิทักจักรวาล</p>
-                  <p>เลขคนขับ : 9999</p>
-                  <p>ทะเบียนรถ : กข-1234</p>
+                <div class="col s8 offset-s4">
+                  <h5>นายด๋ง พิทักจักรวาล</h5>
+                  <h6>ทะเบียนรถ : กข-1234</h6>
+                  <p>รหัสประจำตัวคนขับ : 9999</p>
                 </div>
               </div>
 
               <div class="col s12">
                 <div class="center-align">
-                  <a class="waves-effect waves-light btn">รายงานปัญหา</a>
+                  <a class="waves-effect waves-light btn red">รายงานปัญหา</a>
                 </div>
-                <br><hr><br>
+                <br><hr>
               </div>
-
-              <p class="center-align">ประวัติการรายงาน</p>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ขับรถเร็ว
+              <div class="col s12">
+                <p class="center-align">ประวัติการรายงาน</p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>หมวดหมู่</th>
+                      <th>รายงานในรอบ 30 วัน (ครั้ง)</th>
+                      <th>รายงานในรอบปี (ครั้ง)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ขับรถหวาดเสียว</td>
+                      <td>10</td>
+                      <td>120</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ผ่าไฟแดง
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                มารยาทไม่ดี
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ลวนลามผู้โดยสาร
-              </div>
-              <div class="col s12" style="outline: 1px solid #9a9a9a">
-                ตดในรถ
-              </div>
-
             </div>
-
           </div>
         </div>
 
