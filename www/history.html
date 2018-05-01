@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/history.css">
     <title>Taxi48</title>
 </head>
 
@@ -66,19 +67,23 @@
                     <div class="card">
                         <div class="card-content black-text">
                             <div class="row">
-                                <div class="col s9">
-                                    <span class="card-title center-align">กข-1234</span>
-                                    <p>เลขคนขับ - 1234567</p>
-                                    <p>วันเวลาเกิดเหตุ - วันที่ 11 เดือน 12 เวลา 20:34 น.</p>
-                                    <p>สถานที่เกิดเหตุ</p>
-                                    <p>เรียกจาก หน้ามอ ไป หลังมอ</p>
-                                    <p>หัวข้อร้องเรียน : ตดในรถ</p>
+                                <div class="col s8">
+                                    <span class="card-title center-align deep-orange-text" id="plate">เลขทะเบียน กข-1234</span>
+                                    <p id="driver_id">เลขคนขับ - 9999</p>
+                                    <p>วันเวลาเกิดเหตุ :</p>
+                                    <p id="info">11/12/2558 - 20:34 น.</p>
+                                    <p>สถานที่เกิดเหตุ :</p>
+                                    <p id="info">ถนนพุทธบูชา</p>
+                                    <p>หัวข้อร้องเรียน :</p>
+                                    <p id="info">ตดในรถ</p>
 
                                 </div>
-                                <div class="col s3">
-                                    <span class="card-title">วันที่รายงาน</span>
-                                    <p>12 เดือน 12</p>
-                                    <p>11 : 42 น.</p>
+                                <div class="col s4">
+                                    <span class="card-title center-align green-text">วันที่แจ้ง</span>
+                                    <div class="date">
+                                    <p >12/12/2558</p>
+                                    <p >11 : 42 น.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

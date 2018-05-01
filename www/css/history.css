@@ -1,0 +1,27 @@
+p {
+    padding: 2px;
+}
+
+p#info {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.date{
+    text-align: center;
+    padding-top: 50%;
+    padding-bottom : 50%;
+}
+
+div.card-content {
+        padding-bottom: 0px !important;
+}
+
+p#driver_id {
+    font-weight: bold;
+    text-align: left;
+}
+
+#plate {
+    
+}
