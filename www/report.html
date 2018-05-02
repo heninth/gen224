@@ -59,9 +59,9 @@
 
     <main>
         <div class="container">
-            <div class="col s12">
+            <!-- <div class="col s12">
                 <h5 class="center-align">แบบฟอร์มรายงาน</h5>
-            </div>
+            </div> -->
             <div class="row">
                 <from class="col s12">
                     <div class="card">
@@ -76,30 +76,26 @@
                         <label for="last_name">นามสกุล</label>
                     </div>
                     <div class="col s12">
-                        เลขคนขับ
-                        <div class="input-field inline">
+                        <div class="input-field">
                             <input disabled value="9999" id="driver_id" type="text" class="validate center-align">
                             <label for="driver_id">เลขคนขับ</label>
                         </div>
                     </div>
                     <div class="col s12">
-                        ทะเบียนรถ
-                        <div class="input-field inline">
+                        <div class="input-field">
                             <input disabled value="กข-1234" id="car_id" type="text" class="validate center-align">
                             <label for="car_id">เลขะเบียนรถ</label>
                         </div>
                     </div>
-                    <div class="col s12">
-                        วันที่เกิดเหตุ
-                        <div class="input-field inline">
-                            <input id="date_picker" type="text" class="datepicker">
+                    <div class="col s6">
+                        <div class="input-field ">
+                            <input id="date_picker" type="text" class="datepicker center-align">
                             <label for="date_picker">วันที่เกิดเหตุ</label>
                         </div>
                     </div>
-                    <div class="col s12">
-                        เวลาที่เกิดเหตุ
-                        <div class="input-field inline">
-                            <input id="time_picker" type="text" class="timepicker">
+                    <div class="col s6">
+                        <div class="input-field ">
+                            <input id="time_picker" type="text" class="timepicker center-align">
                             <label for="time_picker">เวลาที่เกิดเหตุ</label>
                         </div>
                     </div>
@@ -143,7 +139,7 @@
                                             <p>
                                                 <label>
                                                     <input type="checkbox" />
-                                                    <span>reason1</span>
+                                                    <span>ขับรถหวาดเสียว</span>
                                                 </label>
                                             </p>
                                         </div>
@@ -151,7 +147,7 @@
                                             <p>
                                                 <label>
                                                     <input type="checkbox" />
-                                                    <span>reason1</span>
+                                                    <span>ไม่มีมารยาท</span>
                                                 </label>
                                             </p>
                                         </div>
@@ -159,7 +155,7 @@
                                             <p>
                                                 <label>
                                                     <input type="checkbox" />
-                                                    <span>reason1</span>
+                                                    <span>ทิ้งผู้โดยสาร</span>
                                                 </label>
                                             </p>
                                         </div>
@@ -167,7 +163,7 @@
                                             <p>
                                                 <label>
                                                     <input type="checkbox" />
-                                                    <span>reason1</span>
+                                                    <span>ปฏิเสธผู้โดยสาร</span>
                                                 </label>
                                             </p>
                                         </div>
@@ -175,7 +171,7 @@
                                             <p>
                                                 <label>
                                                     <input type="checkbox" />
-                                                    <span>reason1</span>
+                                                    <span>รถไม่สะอาด</span>
                                                 </label>
                                             </p>
                                         </div>
@@ -183,7 +179,7 @@
                                             <p>
                                                 <label>
                                                     <input type="checkbox" />
-                                                    <span>reason1</span>
+                                                    <span>พูดจาไม่เหมาะสม</span>
                                                 </label>
                                             </p>
                                         </div>
@@ -270,11 +266,11 @@
                         </div>
 
                         <div class="input-field col s12">
-                            <button class="btn-small waves-effect waves-light red col s12" name="cancel">ยกเลิก
+                            <button class="btn waves-effect waves-light green col s12" type="submit" name="submit_report">รายงาน
                             </button>
                         </div>
                         <div class="input-field col s12">
-                            <button class="btn-large waves-effect waves-light green col s12" type="submit" name="submit_report">รายงาน
+                            <button class="btn waves-effect waves-light red col s12" name="cancel">ยกเลิก
                             </button>
                         </div>
 
